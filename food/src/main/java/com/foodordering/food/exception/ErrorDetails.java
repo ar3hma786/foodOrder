@@ -1,24 +1,20 @@
-package com.foodordering.food.response;
+package com.foodordering.food.exception;
 
-
-import com.foodordering.food.domain.USER_ROLE;
-
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthResponse {
+public class ErrorDetails {
 	
-	
-	private String token;
+	private String error;
 	
 	private String message;
 	
-	private USER_ROLE role;
+	private LocalDateTime localDateTime;
 
 }
