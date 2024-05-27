@@ -2,7 +2,10 @@ package com.foodordering.food.model;
 
 import java.util.Date;
 
+
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import jakarta.persistence.Entity;
@@ -23,7 +26,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name ="Order")
+@Table(name ="orders")
 public class Orders {
 	
 	@Id
@@ -32,6 +35,10 @@ public class Orders {
 	
 	@ManyToOne
 	private User customer;
+	
+	@JsonIgnore
+	@ManyToOne
+	private Restaurant restaurant;
 	
     private Long totalAmount;
 	
